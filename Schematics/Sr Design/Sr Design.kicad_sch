@@ -47,6 +47,48 @@
 			)
 		)
 	)
+	(sheet
+		(at 106.68 19.05)
+		(size 71.12 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "2cead76a-a95c-4d3f-870e-84fb66109598")
+		(property "Sheetname" "Pan_and_Tilt"
+			(at 106.68 18.3384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Pan_and_Tilt.kicad_sch"
+			(at 106.68 65.3546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sr Design"
+				(path "/a9415093-c716-43d5-965a-b0cfe44093a0"
+					(page "3")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

@@ -4,6 +4,10 @@
 	(generator_version "9.0")
 	(uuid "3d77b964-a071-4c7f-861a-4cb463ebedef")
 	(paper "A4")
+	(title_block
+		(title "Water Gun")
+		(rev ".31")
+	)
 	(lib_symbols
 		(symbol "Connector:Raspberry_Pi_4"
 			(exclude_from_sim no)
@@ -994,11 +998,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diode:1N4004"
+		(symbol "Diode:1N5818"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
+				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -1012,7 +1017,7 @@
 					)
 				)
 			)
-			(property "Value" "1N4004"
+			(property "Value" "1N5818"
 				(at 0 -2.54 0)
 				(effects
 					(font
@@ -1029,7 +1034,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1038,7 +1043,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "400V 1A General Purpose Rectifier Diode, DO-41"
+			(property "Description" "30V 1A Schottky Barrier Rectifier Diode, DO-41"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1047,25 +1052,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
+			(property "ki_keywords" "diode Schottky"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1083,10 +1070,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "1N4004_0_1"
+			(symbol "1N5818_0_1"
 				(polyline
 					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
 					)
 					(stroke
 						(width 0.254)
@@ -1121,7 +1108,7 @@
 					)
 				)
 			)
-			(symbol "1N4004_1_1"
+			(symbol "1N5818_1_1"
 				(pin passive line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -1843,21 +1830,53 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Flyback Diode to clamp \ninductive spike."
+		(exclude_from_sim no)
+		(at 145.796 41.402 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+		)
+		(uuid "7edd2300-7cb1-493e-b7e2-31d80f37edb6")
+	)
+	(text "Flyback Diode to clamp \ninductive spike."
+		(exclude_from_sim no)
+		(at 227.076 41.148 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+		)
+		(uuid "be1e776e-369f-4ab4-a1ac-13bc70ab8e10")
+	)
 	(junction
-		(at 158.75 49.53)
+		(at 204.47 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a4fd79f4-c260-4717-b301-7b48e6c6a08d")
 	)
 	(junction
-		(at 158.75 41.91)
+		(at 124.46 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c38bd392-3e11-434f-a37a-88b29fe26d48")
+	)
+	(junction
+		(at 124.46 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cdb4f984-0838-4e27-b902-9da227e8f235")
+	)
+	(junction
+		(at 204.47 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f5059663-0ad0-46b7-98e1-cb7354eb77c6")
 	)
 	(wire
 		(pts
-			(xy 124.46 38.1) (xy 124.46 43.18)
+			(xy 124.46 38.1) (xy 124.46 41.91)
 		)
 		(stroke
 			(width 0)
@@ -1867,7 +1886,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 48.26) (xy 158.75 49.53)
+			(xy 204.47 48.26) (xy 204.47 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1887,7 +1906,17 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 41.91) (xy 167.64 41.91)
+			(xy 124.46 41.91) (xy 132.08 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "298fa8ea-3c72-460d-b380-eb8937fd7824")
+	)
+	(wire
+		(pts
+			(xy 204.47 41.91) (xy 213.36 41.91)
 		)
 		(stroke
 			(width 0)
@@ -1897,13 +1926,23 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 81.28) (xy 106.68 95.25)
+			(xy 124.46 49.53) (xy 124.46 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3bfbbc77-8b33-4119-be97-ee51b3ddad3a")
+		(uuid "2d7618a3-baf7-43c7-82d5-2e2a7ff98f38")
+	)
+	(wire
+		(pts
+			(xy 124.46 41.91) (xy 124.46 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "358696ab-57c9-475b-9aa6-ffe4c506f339")
 	)
 	(wire
 		(pts
@@ -1917,7 +1956,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 49.53) (xy 167.64 49.53)
+			(xy 204.47 49.53) (xy 213.36 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1927,7 +1966,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 49.53) (xy 158.75 57.15)
+			(xy 204.47 49.53) (xy 204.47 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1937,7 +1976,27 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 67.31) (xy 158.75 72.39)
+			(xy 124.46 49.53) (xy 132.08 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "705fde1d-081c-488b-b9d0-996acf16df81")
+	)
+	(wire
+		(pts
+			(xy 104.14 85.09) (xy 91.44 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84443ec1-9875-4e47-97f7-f1af9a766131")
+	)
+	(wire
+		(pts
+			(xy 204.47 67.31) (xy 204.47 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1947,7 +2006,17 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 62.23) (xy 143.51 81.28)
+			(xy 104.14 62.23) (xy 104.14 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ecadd6-d658-4c10-a522-1e1e4155ef8e")
+	)
+	(wire
+		(pts
+			(xy 189.23 62.23) (xy 189.23 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1957,17 +2026,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 81.28) (xy 106.68 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6895ba0-b8d3-4e57-8e58-6de61d4857be")
-	)
-	(wire
-		(pts
-			(xy 158.75 41.91) (xy 158.75 43.18)
+			(xy 204.47 41.91) (xy 204.47 43.18)
 		)
 		(stroke
 			(width 0)
@@ -1977,7 +2036,17 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 38.1) (xy 158.75 41.91)
+			(xy 189.23 87.63) (xy 91.44 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6b24cb7-f6ef-40c6-b3f3-d40f542fcb23")
+	)
+	(wire
+		(pts
+			(xy 204.47 38.1) (xy 204.47 41.91)
 		)
 		(stroke
 			(width 0)
@@ -1987,7 +2056,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 48.26) (xy 124.46 57.15)
+			(xy 124.46 48.26) (xy 124.46 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1995,19 +2064,9 @@
 		)
 		(uuid "f898ec34-0a81-4104-ae06-37b4b79de1ce")
 	)
-	(wire
-		(pts
-			(xy 104.14 62.23) (xy 104.14 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9143a3a-4026-47a7-92b6-69ec8f67bf8d")
-	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 147.32 62.23 90)
+		(at 193.04 62.23 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2016,7 +2075,7 @@
 		(fields_autoplaced yes)
 		(uuid "1c8697f6-903c-47f8-bc3d-19f9f251e7c8")
 		(property "Reference" "R2"
-			(at 147.32 55.88 90)
+			(at 193.04 55.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2024,7 +2083,7 @@
 			)
 		)
 		(property "Value" "300"
-			(at 147.32 58.42 90)
+			(at 193.04 58.42 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2032,7 +2091,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.574 61.214 90)
+			(at 193.294 61.214 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2041,7 +2100,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 147.32 62.23 0)
+			(at 193.04 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2050,7 +2109,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 147.32 62.23 0)
+			(at 193.04 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2286,7 +2345,7 @@
 	)
 	(symbol
 		(lib_id "Water Gun:Solenoid")
-		(at 153.67 45.72 270)
+		(at 199.39 45.72 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2295,7 +2354,7 @@
 		(fields_autoplaced yes)
 		(uuid "71cfb301-0b73-4ba5-83de-f52ab0423629")
 		(property "Reference" "U2"
-			(at 150.495 36.83 90)
+			(at 196.215 36.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2303,7 +2362,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 150.495 39.37 90)
+			(at 196.215 39.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2312,7 +2371,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 45.72 0)
+			(at 199.39 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2321,7 +2380,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 45.72 0)
+			(at 199.39 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2330,7 +2389,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 153.67 45.72 0)
+			(at 199.39 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2355,7 +2414,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 158.75 38.1 0)
+		(at 204.47 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2364,7 +2423,7 @@
 		(fields_autoplaced yes)
 		(uuid "73ca52aa-c6fb-4d23-8fc3-4f87207829ca")
 		(property "Reference" "#PWR03"
-			(at 158.75 41.91 0)
+			(at 204.47 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2373,7 +2432,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 158.75 33.02 0)
+			(at 204.47 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2381,7 +2440,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 158.75 38.1 0)
+			(at 204.47 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2390,7 +2449,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 158.75 38.1 0)
+			(at 204.47 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2399,7 +2458,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 158.75 38.1 0)
+			(at 204.47 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2414,94 +2473,6 @@
 			(project "Sr Design"
 				(path "/a9415093-c716-43d5-965a-b0cfe44093a0/1c7459dd-cf78-4d64-bcbe-5c11431f21c6"
 					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N4004")
-		(at 167.64 45.72 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7f5015cb-cdf8-40fd-94cf-5e8ffb4dd141")
-		(property "Reference" "D1"
-			(at 170.18 44.4499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1N4004"
-			(at 170.18 46.9899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
-			(at 163.195 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
-			(at 167.64 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "400V 1A General Purpose Rectifier Diode, DO-41"
-			(at 167.64 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 167.64 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 167.64 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0f564dde-8876-4815-a8cd-8b09255ad17a")
-		)
-		(pin "2"
-			(uuid "ec6c3d07-e319-4241-8d60-764ad1f0edb3")
-		)
-		(instances
-			(project ""
-				(path "/a9415093-c716-43d5-965a-b0cfe44093a0/1c7459dd-cf78-4d64-bcbe-5c11431f21c6"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -2575,34 +2546,32 @@
 	)
 	(symbol
 		(lib_id "Connector:Raspberry_Pi_4")
-		(at 124.46 128.27 270)
+		(at 58.42 72.39 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e4f54077-2e01-4041-8cb8-eb02c9f0013d")
 		(property "Reference" "J1"
-			(at 151.13 126.9999 90)
+			(at 58.42 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "Raspberry_Pi_4"
-			(at 151.13 129.5399 90)
+			(at 58.42 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 76.962 198.374 0)
+			(at -11.684 119.888 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2612,7 +2581,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-datasheet.pdf"
-			(at 92.202 144.018 0)
+			(at 42.672 104.648 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2622,7 +2591,7 @@
 			)
 		)
 		(property "Description" "Raspberry Pi 4 Model B"
-			(at 94.742 144.018 0)
+			(at 42.672 102.108 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2762,7 +2731,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 158.75 72.39 0)
+		(at 204.47 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2771,7 +2740,7 @@
 		(fields_autoplaced yes)
 		(uuid "e6e9f770-20bf-44ef-a724-763d56724871")
 		(property "Reference" "#PWR04"
-			(at 158.75 78.74 0)
+			(at 204.47 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2780,7 +2749,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 158.75 77.47 0)
+			(at 204.47 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2788,7 +2757,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 158.75 72.39 0)
+			(at 204.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2797,7 +2766,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 158.75 72.39 0)
+			(at 204.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2806,7 +2775,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 158.75 72.39 0)
+			(at 204.47 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2827,8 +2796,78 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N5818")
+		(at 213.36 45.72 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e94c33ba-72ed-4673-a453-f31343393dc0")
+		(property "Reference" "D1"
+			(at 215.9 44.1324 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N5818"
+			(at 215.9 46.6724 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 208.915 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(at 213.36 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(at 213.36 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5fe2d162-50a5-4493-b510-5a208c427203")
+		)
+		(pin "1"
+			(uuid "dd491c24-2e92-435d-91cb-b2554b950b7d")
+		)
+		(instances
+			(project ""
+				(path "/a9415093-c716-43d5-965a-b0cfe44093a0/1c7459dd-cf78-4d64-bcbe-5c11431f21c6"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_BJT:BF457")
-		(at 156.21 62.23 0)
+		(at 201.93 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2837,7 +2876,7 @@
 		(fields_autoplaced yes)
 		(uuid "ebf1e533-581d-4be7-ace6-da8c4de353b1")
 		(property "Reference" "Q1"
-			(at 161.29 60.9599 0)
+			(at 207.01 60.9599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2846,7 +2885,7 @@
 			)
 		)
 		(property "Value" "C6144"
-			(at 161.29 63.4999 0)
+			(at 207.01 63.4999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2855,7 +2894,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-126-3_Vertical"
-			(at 161.29 64.135 0)
+			(at 207.01 64.135 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2866,7 +2905,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.digikey.com/en/products/detail/onsemi/2SC6144/2797043"
-			(at 156.21 62.23 0)
+			(at 201.93 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2876,7 +2915,7 @@
 			)
 		)
 		(property "Description" "0.1A Ic, 160V Vce, High Voltage NPN Transistor, TO-126"
-			(at 156.21 62.23 0)
+			(at 201.93 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2965,6 +3004,76 @@
 			(project ""
 				(path "/a9415093-c716-43d5-965a-b0cfe44093a0/1c7459dd-cf78-4d64-bcbe-5c11431f21c6"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N5818")
+		(at 132.08 45.72 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fd538317-62c2-4cc3-9bdf-810e985a48b4")
+		(property "Reference" "D2"
+			(at 134.62 44.1324 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N5818"
+			(at 134.62 46.6724 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 127.635 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(at 132.08 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "30V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(at 132.08 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0c04bb93-c755-43f3-bb74-2ebebdffcf18")
+		)
+		(pin "2"
+			(uuid "4f5569a2-302b-407c-bbf8-18007fcad2f6")
+		)
+		(instances
+			(project ""
+				(path "/a9415093-c716-43d5-965a-b0cfe44093a0/1c7459dd-cf78-4d64-bcbe-5c11431f21c6"
+					(reference "D2")
 					(unit 1)
 				)
 			)
