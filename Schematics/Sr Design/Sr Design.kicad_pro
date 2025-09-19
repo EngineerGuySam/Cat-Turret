@@ -621,6 +621,10 @@
     [
       "2cead76a-a95c-4d3f-870e-84fb66109598",
       "Pan_and_Tilt"
+    ],
+    [
+      "4108886a-f414-4bcc-8e99-348be46f5d31",
+      "Water Sensor"
     ]
   ],
   "text_variables": {}
