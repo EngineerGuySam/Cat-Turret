@@ -5,9 +5,9 @@ import RPi.GPIO as GPIO
 
  
 
-pump = "pin number for pump"
+pump = 16
 
-solenoid = "pin nuber for solenoid"
+solenoid = 18
 
  
 
@@ -15,7 +15,7 @@ def initialize(): #initialize pins for water pump and solenoid
 
    
 
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
 
     GPIO.setup(pump, GPIO.OUT, initial=GPIO.LOW)
 
@@ -68,3 +68,13 @@ def cleanup(): #cleanup pins casuse thats what sophia told me to do with the 4B
     GPIO.cleanup()
 
     print("Clearing pins")
+    
+    
+    
+while(1):
+    initialize()
+    
+    activate(3,1)
+    
+    cleanup()
+    print("cleanup")
